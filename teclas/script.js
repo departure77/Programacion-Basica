@@ -5,11 +5,13 @@ var teclas = {
     RIGHT: 39
 };
 
-
+var mouse = {
+  
+}
 console.log(teclas);
 console.log("mouseup");
 
-document.addEventListener("mouseup", dibujarTeclado);
+document.addEventListener("mouseup", dibujarMouse);
 var cuadrito = document.getElementById("areaDibujo");
 var papel = cuadrito.getContext("2d");
 var x = 150;
@@ -62,3 +64,10 @@ function dibujarTeclado(evento){
     
 }
 
+function dibujarMouse(evento){
+    
+    var color = "black";
+    var movimiento = 3;
+
+    console.log(evento);
+}
