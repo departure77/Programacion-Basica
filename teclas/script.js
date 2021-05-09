@@ -5,23 +5,32 @@ var teclas = {
     RIGHT: 39
 };
 
+var mouse = {
+    UP: screenY,
+    DOWN: screenY,
+    LEFT: ClientX,
+    RIGHT: ClientX
+};
 
 console.log(teclas);
-console.log("mouseup");
+console.log(mouse);
+    
 
-document.addEventListener("mouseup", dibujarTeclado);
+
+document.addEventListener("mousemove", dibujarMouse);
 var cuadrito = document.getElementById("areaDibujo");
 var papel = cuadrito.getContext("2d");
-var x = 150;
-var y = 150;
+var x = 400;
+var y = 300;
+var color = document.getElementById("selectColor");
 
-dibujarLinea("red", 149, 149, 151, 151, papel)
+dibujarLinea(color, 399, 399, 301, 301, papel)
 
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
     
     lienzo.beginPath();
     lienzo.strokeStyle = color;
-    lienzo.lineWidth = 3;
+    lienzo.lineWidth = 2;
     lienzo.moveTo(xinicial, yinicial);
     lienzo.lineTo(xfinal, yfinal);
     lienzo.stroke();
@@ -58,7 +67,16 @@ function dibujarTeclado(evento){
             break;
          
     }
-    
-    
+       
 }
 
+function dibujarMouse(evento, selectColor){
+    console.log("oprimido");
+
+    switch(evento.MouseEvent){
+        case mouse.UP:
+    }
+    
+
+    
+}
